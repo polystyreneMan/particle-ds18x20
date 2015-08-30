@@ -8,6 +8,7 @@ modified by https://github.com/MORA99 2010-15
 
 **********************************************************************************/
 
+#include "application.h"
 #include "ds18x20.h"
 #include "onewire.h"
 #include "crc8.h"
