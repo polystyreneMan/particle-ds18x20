@@ -49,8 +49,6 @@ uint8_t DS18X20_meas_to_cel( uint8_t fc, uint8_t *sp, uint8_t* subzero, uint8_t*
 		meas++;
 	}
 	else *subzero=0;
-	
-        Spark.publish( "log", "Measurement: " + String( meas ) );
         
 	// clear undefined bits for B != 12bit
 	if ( fc == DS18B20_ID ) { // check resolution 18B20
@@ -65,7 +63,7 @@ uint8_t DS18X20_meas_to_cel( uint8_t fc, uint8_t *sp, uint8_t* subzero, uint8_t*
 		}
 	}
 	
-        Spark.publish( "log", "Adjusted Measurement: " + String( meas ) );
+        Spark.publish( "log", "Measurement: " + String( meas ) );
 	
 	*cel  = (uint8_t)(meas >> 4);
 	*cel_frac_bits = (uint8_t)(meas & 0x000F);
